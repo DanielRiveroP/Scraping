@@ -43,9 +43,13 @@
     </div>
 
     <!-- Sección de Reseñas -->
-    <div class="resenas-section" *ngIf="datos.resenas && datos.resenas.length > 0">
-      <h3>📌 Últimas 10 Reseñas</h3>
-      <div class="resenas-container">
+    <div class="resenas-section" *ngIf="datos">
+      <div class="resenas-header">
+        <h3>📌 {{ datos.resenas && datos.resenas.length > 0 ? 'Últimas ' + datos.resenas.length + ' Reseñas' : 'Sin reseñas disponibles' }}</h3>
+      </div>
+
+      <!-- Lista de reseñas -->
+      <div class="resenas-container" *ngIf="datos.resenas && datos.resenas.length > 0">
         <div class="resena-card" *ngFor="let resena of datos.resenas">
           <div class="resena-header">
             <div class="resena-autor">
@@ -60,6 +64,11 @@
           </div>
           <p class="resena-texto">{{ resena.texto }}</p>
         </div>
+      </div>
+
+      <!-- Mensaje cuando no hay reseñas -->
+      <div class="sin-resenas" *ngIf="!datos.resenas || datos.resenas.length === 0">
+        <p>💭 No se encontraron reseñas para este negocio en este momento.</p>
       </div>
     </div>
   </div>

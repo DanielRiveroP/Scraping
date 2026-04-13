@@ -121,18 +121,145 @@ h1 {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.resenas-section h3 {
-  color: #333;
-  margin-top: 0;
+.resenas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.resenas-header h3 {
+  color: #333;
+  margin: 0;
   font-size: 20px;
+}
+
+.btn-agregar-resena {
+  background: #4285f4;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.btn-agregar-resena:hover {
+  background: #2c5aa0;
+}
+
+/* Formulario de reseña */
+.formulario-resena {
+  background: #f0f4ff;
+  border: 2px solid #4285f4;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.formulario-contenido h4 {
+  margin-top: 0;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.formulario-grupo {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-grupo label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 14px;
+}
+
+.formulario-grupo input,
+.formulario-grupo textarea,
+.formulario-grupo select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.formulario-grupo textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.formulario-grupo input:focus,
+.formulario-grupo textarea:focus,
+.formulario-grupo select:focus {
+  outline: none;
+  border-color: #4285f4;
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+}
+
+.formulario-botones {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-guardar,
+.btn-cancelar {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+.btn-guardar {
+  background: #34a853;
+  color: white;
+}
+
+.btn-guardar:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-cancelar {
+  background: #fbbc04;
+  color: #333;
+}
+
+.btn-cancelar:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-guardar:disabled,
+.btn-cancelar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.mensaje-exito {
+  background: #d4edda;
+  color: #155724;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #c3e6cb;
+  text-align: center;
+  font-weight: bold;
 }
 
 .resenas-container {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-height: 500px;
+  max-height: 600px;
   overflow-y: auto;
 }
 
@@ -187,4 +314,14 @@ h1 {
   line-height: 1.6;
   margin: 0;
   font-size: 14px;
+}
+
+.sin-resenas {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+  font-size: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #ddd;
 }
